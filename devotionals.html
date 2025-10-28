@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kachi Emmanuel Ministries | Devotional Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="devotionals.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="km-navbar">
+        <div class="container km-container">
+            <a href="index.html" class="km-brand">
+                <span class="fa-solid fa-arrow-left"></span>
+                <span>Menu</span>
+            </a>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Daily Devotionals</h1>
+                <p>Nourish your spirit with biblical teachings and practical insights for daily living</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Devotional Filters -->
+    <section class="devotional-filters">
+        <div class="container">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Devotionals</button>
+                <button class="filter-btn" data-filter="faith">Faith</button>
+                <button class="filter-btn" data-filter="purpose">Purpose</button>
+                <button class="filter-btn" data-filter="prayer">Prayer</button>
+                <button class="filter-btn" data-filter="growth">Spiritual Growth</button>
+                <button class="filter-btn" data-filter="relationships">Relationships</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <!-- Featured Devotional -->
+            <div class="featured-devotional">
+                <div class="featured-content">
+                    <span class="featured-badge">Featured Devotional</span>
+                    <h2 class="featured-title">Walking in God's Purpose</h2>
+                    <p class="featured-excerpt">Discover how to align your life with God's divine plan and experience the fulfillment that comes from walking in purpose. This devotional explores Jeremiah 29:11 and what it means for your life today.</p>
+                    <button class="read-more" data-id="1">Read Full Devotional</button>
+                </div>
+            </div>
+
+            <h2 class="section-title">Recent Devotionals</h2>
+            
+            <div id="blog-container" class="blog-grid">
+                <!-- Blog posts will be loaded here from Google Sheets -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Loading devotionals...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Modal -->
+    <div class="blog-modal" id="blog-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div class="modal-body">
+                <span class="modal-category" id="modal-category">Devotional</span>
+                <h1 class="modal-title" id="modal-title">Devotional Title</h1>
+                <div class="modal-meta">
+                    <span class="modal-date" id="modal-date">October 17, 2023</span>
+                    <span class="modal-author"><i class="fas fa-user"></i> <span id="modal-author">Kachi Emmanuel</span></span>
+                </div>
+                <div class="modal-text" id="modal-text">
+                    <!-- Full devotional content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Kachi Emmanuel Ministries</div>
+                    <p>Providing spiritual nourishment and biblical teachings to help believers grow in their faith.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="devotionals.html">Devotionals</a></li>
+                        <li><a href="ministry.html">Ministry</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="partner.html">Partner</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Kachi Emmanuel Ministries. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                if (nav.style.display === 'flex') {
+                    nav.style.display = 'none';
+                } else {
+                    nav.style.display = 'flex';
+                    nav.style.flexDirection = 'column';
+                    nav.style.position = 'absolute';
+                    nav.style.top = '100%';
+                    nav.style.left = '0';
+                    nav.style.width = '100%';
+                    nav.style.backgroundColor = 'var(--black)';
+                    nav.style.padding = '1rem';
+                    nav.style.gap = '1rem';
+                }
+            });
+        });
+    </script>
+
+    <script src="devotionals.js"></script>
+    
+    <!-- Floating Donate Button -->
+    <a href="partner.html" class="donate-btn" aria-label="Support our ministry"><i class="fas fa-heart"></i> Support Us</a>
+</body>
+</html>
