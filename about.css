@@ -211,7 +211,7 @@ header.scrolled {
 /* Page Header */
 .page-header {
     height: 60vh;
-    background: linear-gradient(rgba(106, 13, 173, 0.8), rgba(74, 0, 114, 0.9)), url('image/2.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(106, 13, 173, 0.8), rgba(74, 0, 114, 0.9)), url('2.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     text-align: center;
